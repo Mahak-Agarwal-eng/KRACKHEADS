@@ -1,6 +1,6 @@
 
 # Project Title and Description
-GET YOUR WEB-This project automates web application development using a multi-agent AI system. Users can enter a simple text prompt like:
+Autonomous Appliocation Builder-This project automates web application development using a multi-agent AI system. Users can enter a simple text prompt like:
 "Create an e-commerce site for handmade crafts"
 and the system automatically designs, builds, and deploys a fully functional web application.
 
