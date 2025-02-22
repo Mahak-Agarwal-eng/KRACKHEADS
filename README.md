@@ -28,8 +28,8 @@ and the system automatically designs, builds, and deploys a fully functional web
 
 5️⃣ The system deploys the final app, making it live & accessible.
 ## Future Improvements
-* Better Deployment platforms like EC2 instance can be used to enhance user-experience.
+* Better local deployment platforms like EC2 instance can be used to enhance user-experience.
 * Inclusion of PostgreSQL for better Database management.
-* User can opt to Deploy the website on an authorized paid platform with a domain name of its choice.
+* User can opt to Deploy the website on an authorized paid platform with a domain name of his/her choice.
 ## Conclusion
 Our project leverages AI agents to automate the end-to-end web development process, transforming a simple user prompt into a fully deployed website. This project showcases the power of AI in web development, enabling faster, smarter, and more efficient website creation. 
