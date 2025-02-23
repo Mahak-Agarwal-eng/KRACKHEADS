@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Genie - Gen AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&family=Convergence&family=barriecito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+
+</head>
+<body>
+    <div class="background-container"></div> <!-- Background Image (Blurred) -->
+    <div class="by">By Team Krackheads</div>
+    <div class="container">
+        <h1 class="title">WEB GENIE</h1>
+        <h2 class="subtitle">Get your URL</h2>
+        <!-- Form to input prompt -->
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Describe your website...">
+            <button onclick="generateWebsite()">Generate</button>
+        </div>
+
+        <!-- Display generated response -->
+        <div id="result" class="result"></div>
+    </div>
+    <div class="footer-section">
+        <p class="aboutsection">
+            <a href="/static/about.html">About This Site & User Guide</a>
+        </p>
+        <span class="separator">|</span>
+        <p class="contactsection">
+            <a href="mailto:krackheads6@gmail.com">&#9993; contact.webgenie</a>
+        </p>
+    </div>
+    <script>
+        async function generateWebsite() {
+            const userInput = document.getElementById("userInput").value;
+            const resultDiv = document.getElementById("result");
+
+            if (!userInput) {
+                resultDiv.innerHTML = "Please enter a description!";
+                return;
+            }
+
+            resultDiv.innerHTML = "Generating... Please wait.";
+
+            try {
+                const response = await fetch("/generate-website", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: `user_input=${encodeURIComponent(userInput)}`
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    resultDiv.innerHTML = `Generated Response: ${data.response}`;
+                } else {
+                    resultDiv.innerHTML = `Error: ${data.detail}`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = "Server error. Try again later!";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+/* Blurred Background */
+.background-container {
+    position: fixed; /* Stays fixed while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url('Web background.jpg') center/cover no-repeat;
+    filter: blur(10px); /* Apply blur effect */
+    z-index: -1; /* Moves it behind the content */
+}
+/* Normal Content (No Blur) */
+.content {
+    position: relative;
+    z-index: 1; /* Keeps content above the blurred background */
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    margin-top: 20%;
+}
+body {
+    background-image: url("Web background.jpg"); /* Replace with your image path */
+    background-size: cover; /* Adjusts size to fit */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Georgia', serif;
+    text-align: center;
+}
+.by{
+    width:200px;
+    height:40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6699;
+    color:white;
+    padding-right:50px;
+    padding-left:50px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size:20px;
+    font-family: "Sixtyfour", cursive ;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.title {
+    word-spacing: -20px;
+    font-family: "Sixtyfour", cursive;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom:10px;
+}
+.subtitle {
+    font-size: 2rem;
+    font-family: "Sixtyfour", cursive;
+    color: #ff6699;
+    margin-top: 0px;
+}
+
+.input-container {
+    margin-top: 20px;
+}
+input {
+    padding: 10px;
+    width: 300px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff4060;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ffb6c1;
+}
+.footer-section{
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    gap: 20px; /* Space between items */
+}
+
+.footer-section  p {
+    margin: 0; /* Remove extra margins */
+    display: inline; /* Ensure inline display */
+}
+
+.separator {
+    font-size: 18px;
+    color: white;
+}
+.footer-section a {
+    display:inline-block;
+    align-items: center;
+    gap: 15px; /* Space between items */
+    color: white;
+    font-size: 15px;
+    text-decoration: none; /* Removes default underline */
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Controls distance from text */
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-section a:hover {
+    color: #ffcc00; /* Optional: Change color on hover */
+}
+
+.footer-section a:hover::after {
+    transform: scaleX(1); /* Expand underline on hover */
+}
